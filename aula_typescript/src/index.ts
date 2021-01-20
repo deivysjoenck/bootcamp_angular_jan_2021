@@ -1,12 +1,29 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+import {
+  buscaAlunoPorNota,
+  listaDeAlunos,
+  montaTurma,
+  mostraArray,
+  somaNotas,
+  tirarPontoTurma,
+} from './exemplos/arrays';
+import { exemploIfLoop, exemploTipos } from './exemplos/primitivos';
+import {
+  estaProvado,
+  filtraAlunoPorNota,
+  imprimeTurma,
+  mostraAluno,
+  retornaAluno,
+  Turma,
+} from './exemplos/exemplo-objetos';
+import {
+  api,
+  buscaPorNome,
+  filtroPorCodigo,
+  mediaPedido,
+  produtoMaisBarato,
+} from './exemplos/exercicio';
 
-import confetti from 'canvas-confetti';
-
-confetti.create(document.getElementById('canvas') as HTMLCanvasElement, {
-  resize: true,
-  useWorker: true,
-})({ particleCount: 200, spread: 200 });
-console.log('teste');
+console.log(`A média do pedido ${mediaPedido(api)}`);
+console.log(`O produto mais barato é  ${produtoMaisBarato(api)}`);
+console.log(`O produto do código 0001 `, filtroPorCodigo(api, '0001'));
+console.log(`O produto da descrição SWITCH é `, buscaPorNome(api, 'SWITCH'));

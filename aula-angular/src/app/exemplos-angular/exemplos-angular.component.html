@@ -1,0 +1,27 @@
+<h2>Olá aluno {{ nomeAluno }}</h2>
+<h2>Da turma {{ turma }}</h2>
+
+<input type="text" [(ngModel)]="nomeAluno" />
+
+<input
+  type="text"
+  [value]="turma"
+  (blur)="atualizaTurma($event.target)"
+  #inputTurma
+/>
+
+<button (click)="atualizaTurma(inputTurma)">Abrir Lista</button>
+
+<div *ngIf="listaAlunos?.length; else nenhumaLista">
+  <ul>
+    <li *ngFor="let aluno of listaAlunos">
+      Nome: {{ aluno.nome }} Data de Nascimento:{{
+        aluno.dataNascimento | date: "dd/MM/yyyy"
+      }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #nenhumaLista>
+  <p>Lista indisponível</p>
+</ng-template>

@@ -1,0 +1,9 @@
+<h1 class="home">Bem vindo ao Angular</h1>
+
+<p>Minha primeira página {{ numero1 + numero2 }}</p>
+
+<app-exemplos-angular
+  [nomeAluno]="nome"
+  (selecaoTurma)="alertaTurma($event)"
+  [listaAlunos]="alunos"
+></app-exemplos-angular>
